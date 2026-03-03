@@ -129,10 +129,10 @@ describe('AutotaskService', () => {
       await expect(service.searchExpenseReports()).rejects.toThrow();
       await expect(service.createExpenseReport({ name: 'Test Report', submitterID: 123 })).rejects.toThrow();
       
-      // Expense items should throw specific error
-      await expect(service.getExpenseItem(123, 456)).rejects.toThrow('Expense items API not yet implemented');
-      await expect(service.searchExpenseItems(123)).rejects.toThrow('Expense items API not yet implemented');
-      await expect(service.createExpenseItem(123, { description: 'Test', expenseDate: '2024-01-01', expenseAmount: 100 })).rejects.toThrow('Expense items API not yet implemented');
+      // Expense items are implemented — they reject because credentials are missing, not with a specific message
+      await expect(service.getExpenseItem(456)).rejects.toThrow();
+      await expect(service.searchExpenseItems()).rejects.toThrow();
+      await expect(service.createExpenseItem({ description: 'Test', expenseDate: '2024-01-01', expenseAmount: 100 })).rejects.toThrow();
     });
 
     test('should handle quote methods with proper error messages', async () => {
