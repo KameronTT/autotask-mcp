@@ -262,6 +262,11 @@ export class AutotaskToolHandler {
       ['autotask_create_ticket', async (a) => {
         const id = await s.createTicket(a); return { result: id, message: `Successfully created ticket with ID: ${id}` };
       }],
+      ['autotask_update_ticket', async (a) => {
+        const { ticketId, ...updates } = a;
+        await s.updateTicket(ticketId, updates);
+        return { result: ticketId, message: `Successfully updated ticket ${ticketId}` };
+      }],
 
       // Time entries
       ['autotask_create_time_entry', async (a) => {
