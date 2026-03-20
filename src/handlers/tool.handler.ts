@@ -599,6 +599,44 @@ export class AutotaskToolHandler {
       };
     }
 
+    // Charge operations
+    if (/\b(?:charges?|material|cost)\b/.test(intent) && /\b(?:ticket|bill)\b/.test(intent)) {
+      if (/\b(?:create|add|new)\b/.test(intent)) {
+        const params: Record<string, any> = {};
+        const ticketMatch = intent.match(/ticket\s*#?\s*(\d+)/i);
+        if (ticketMatch) params.ticketID = parseInt(ticketMatch[1]);
+        else if (numbers[0]) params.ticketID = numbers[0];
+        return {
+          suggestedTool: 'autotask_create_ticket_charge',
+          suggestedParams: params,
+          description: 'Create a ticket charge',
+          requiredParams: [...(!params.ticketID ? ['ticketID'] : []), 'name', 'chargeType'],
+        };
+      }
+      if (/\b(?:delete|remove)\b/.test(intent) && numbers[0]) {
+        const deleteParams: Record<string, any> = { chargeId: numbers[0] };
+        const ticketDeleteMatch = intent.match(/ticket\s*#?\s*(\d+)/i);
+        if (ticketDeleteMatch) deleteParams.ticketId = parseInt(ticketDeleteMatch[1]);
+        else if (numbers[1]) deleteParams.ticketId = numbers[1];
+        return {
+          suggestedTool: 'autotask_delete_ticket_charge',
+          suggestedParams: deleteParams,
+          description: 'Delete a ticket charge',
+          requiredParams: [...(!deleteParams.ticketId ? ['ticketId'] : [])],
+        };
+      }
+      const params: Record<string, any> = {};
+      const ticketMatch = intent.match(/ticket\s*#?\s*(\d+)/i);
+      if (ticketMatch) params.ticketId = parseInt(ticketMatch[1]);
+      else if (numbers[0]) params.ticketId = numbers[0];
+      return {
+        suggestedTool: 'autotask_search_ticket_charges',
+        suggestedParams: params,
+        description: 'Search ticket charges',
+        requiredParams: [],
+      };
+    }
+
     // Contract operations
     if (/\b(?:contract|agreement)\b/.test(intent)) {
       return {
@@ -731,6 +769,30 @@ export class AutotaskToolHandler {
         const { ticketId, ...updates } = a;
         await s.updateTicket(ticketId, updates);
         return { result: ticketId, message: `Successfully updated ticket ${ticketId}` };
+      }],
+
+      // Ticket Charges
+      ['autotask_get_ticket_charge', async (a) => {
+        const r = await s.getTicketCharge(a.chargeId);
+        if (!r) return { result: null, message: `No ticket charge found with ID ${a.chargeId}` };
+        return { result: r, message: 'Ticket charge retrieved successfully' };
+      }],
+      ['autotask_search_ticket_charges', async (a) => {
+        const r = await s.searchTicketCharges(a);
+        return { result: r, message: `Found ${r.length} ticket charges` };
+      }],
+      ['autotask_create_ticket_charge', async (a) => {
+        const id = await s.createTicketCharge(a);
+        return { result: id, message: `Successfully created ticket charge with ID: ${id}` };
+      }],
+      ['autotask_update_ticket_charge', async (a) => {
+        const { chargeId, ...updates } = a;
+        await s.updateTicketCharge(chargeId, updates);
+        return { result: chargeId, message: `Successfully updated ticket charge ${chargeId}` };
+      }],
+      ['autotask_delete_ticket_charge', async (a) => {
+        await s.deleteTicketCharge(a.ticketId, a.chargeId);
+        return { result: a.chargeId, message: `Successfully deleted ticket charge ${a.chargeId}` };
       }],
 
       // Time entries
