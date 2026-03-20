@@ -40,7 +40,7 @@ jobs:
         run: npm test
       
       - name: Test Docker build
-        run: docker build -t autotask-mcp:test .
+        run: docker build --platform linux/amd64 -t autotask-mcp:test .
 
   code-quality:
     name: Code Quality
