@@ -1,3 +1,10 @@
+## [2.15.2](https://github.com/wyre-technology/autotask-mcp/compare/v2.15.1...v2.15.2) (2026-03-31)
+
+
+### Bug Fixes
+
+* **deploy:** replace node_compat with nodejs_compat for Wrangler v4 ([e0bb78d](https://github.com/wyre-technology/autotask-mcp/commit/e0bb78d414fe0ff6c2a571440c9ef63623043541)), closes [#50](https://github.com/wyre-technology/autotask-mcp/issues/50)
+
 ## [2.15.1](https://github.com/wyre-technology/autotask-mcp/compare/v2.15.0...v2.15.1) (2026-03-26)
 
 
