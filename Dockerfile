@@ -6,9 +6,7 @@ ARG VERSION="unknown"
 ARG COMMIT_SHA="unknown"
 ARG BUILD_DATE="unknown"
 
-# Pin npm to v10 (npm 11.x breaks --prefer-offline + --prefer-online=false for git deps)
-RUN npm install -g npm@10
-
+# node:22-alpine ships with npm 10.x — no need to install globally
 # Set working directory
 WORKDIR /app
 
@@ -16,7 +14,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies (--ignore-scripts prevents 'prepare' from running before source is copied)
-RUN npm ci
+RUN npm ci --ignore-scripts
 
 # Copy source code
 COPY . .
@@ -26,9 +24,6 @@ RUN npm run build
 
 # Production stage
 FROM node:22-alpine AS production
-
-# Pin npm to v10 (npm 11.x breaks --prefer-offline + --prefer-online=false for git deps)
-RUN npm install -g npm@10
 
 # Create a non-root user for security
 RUN addgroup -g 1001 -S autotask && \
