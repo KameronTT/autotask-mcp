@@ -181,14 +181,19 @@ describe('AutotaskService', () => {
       await expect(service.deleteQuoteItem(1, 123)).rejects.toThrow();
     });
 
+    test('should handle billing code methods (now implemented, require credentials)', async () => {
+      const service = new AutotaskService(mockConfig, mockLogger);
+
+      // Billing codes are now implemented via client.financial.billingCodes
+      // Without credentials they throw a credentials error
+      await expect(service.getBillingCode(123)).rejects.toThrow();
+      await expect(service.searchBillingCodes()).rejects.toThrow();
+    });
+
     test('should handle unsupported entity methods with proper error messages', async () => {
       const service = new AutotaskService(mockConfig, mockLogger);
-      
-      // Billing codes
-      await expect(service.getBillingCode(123)).rejects.toThrow('Billing codes API not directly available');
-      await expect(service.searchBillingCodes()).rejects.toThrow('Billing codes API not directly available');
-      
-      // Departments
+
+      // Departments are still not directly available
       await expect(service.getDepartment(123)).rejects.toThrow('Departments API not directly available');
       await expect(service.searchDepartments()).rejects.toThrow('Departments API not directly available');
     });
