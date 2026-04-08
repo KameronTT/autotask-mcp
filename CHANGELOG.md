@@ -1,3 +1,135 @@
+# 1.0.0 (2026-04-08)
+
+
+* feat!: Namespace all MCP tools with 'autotask_' prefix (v2.0.0) ([1190101](https://github.com/KameronTT/autotask-mcp/commit/119010121974b991f8f0438d1ee7eca8c990cd81))
+
+
+### Bug Fixes
+
+* add CLI bin entry and enforce test failures in CI ([10ce1c7](https://github.com/KameronTT/autotask-mcp/commit/10ce1c71324f5b301a6b41e151f187f377cd6793)), closes [#4](https://github.com/KameronTT/autotask-mcp/issues/4) [#4](https://github.com/KameronTT/autotask-mcp/issues/4)
+* add missing required fields to task, project note, and project creation ([df72fb4](https://github.com/KameronTT/autotask-mcp/commit/df72fb413e6e50e460a5864fd656d318ead622e1)), closes [wyre-technology/msp-claude-plugins#36](https://github.com/wyre-technology/msp-claude-plugins/issues/36) [#40](https://github.com/KameronTT/autotask-mcp/issues/40) [#41](https://github.com/KameronTT/autotask-mcp/issues/41) [#42](https://github.com/KameronTT/autotask-mcp/issues/42) [wyre-technology/autotask-mcp#40](https://github.com/wyre-technology/autotask-mcp/issues/40) [wyre-technology/autotask-mcp#41](https://github.com/wyre-technology/autotask-mcp/issues/41) [wyre-technology/autotask-mcp#42](https://github.com/wyre-technology/autotask-mcp/issues/42)
+* Address GitHub issues [#3](https://github.com/KameronTT/autotask-mcp/issues/3), [#8](https://github.com/KameronTT/autotask-mcp/issues/8), [#9](https://github.com/KameronTT/autotask-mcp/issues/9) - search filtering and API endpoints ([b11256b](https://github.com/KameronTT/autotask-mcp/commit/b11256bab28df8e98f29017ebc5f20059253df65))
+* allow unauthenticated tools/list in gateway mode ([afa5120](https://github.com/KameronTT/autotask-mcp/commit/afa51208a9c1dd06625809b8339d11be65770ee2))
+* **cache:** solve thundering herd bug resolving company mapping limits ([ffa318a](https://github.com/KameronTT/autotask-mcp/commit/ffa318a108455df1007eef46a3810764165444c4))
+* **ci:** add GITHUB_TOKEN to version detection step ([99e2b29](https://github.com/KameronTT/autotask-mcp/commit/99e2b29c772e1fd80995888126b849629d8cb088))
+* **ci:** add multi-platform Docker builds for arm64 support ([9e565c6](https://github.com/KameronTT/autotask-mcp/commit/9e565c6f2a046834df10b1774562867766e5a647))
+* **ci:** Add proper permissions for release and security scan jobs ([d60e138](https://github.com/KameronTT/autotask-mcp/commit/d60e138684c214dcab6196cffe977fb581bc20eb))
+* **ci:** deploy :latest tag, force revision via env var bump ([dd31423](https://github.com/KameronTT/autotask-mcp/commit/dd3142390e20236a77bf784b79856a8c28a11f1f))
+* **ci:** Disable npm publishing in semantic-release ([ae11880](https://github.com/KameronTT/autotask-mcp/commit/ae118800add292aaf5aa626aef29cc61e9d8cff9))
+* **ci:** fix broken YAML in Discord notification step ([bc3b34a](https://github.com/KameronTT/autotask-mcp/commit/bc3b34a9e1479b6a2a8ddb5a0658378270a0fd71))
+* **ci:** move Discord notification into release workflow ([113d526](https://github.com/KameronTT/autotask-mcp/commit/113d52638bada126ec8bfe081012870aaa2f053a))
+* **ci:** pack MCPB bundle after semantic-release version bump ([53c952e](https://github.com/KameronTT/autotask-mcp/commit/53c952ea61c6b3f16b5f4405d5b9143e214d4b53))
+* **ci:** replace dist file uploads with MCPB bundle in releases ([280127f](https://github.com/KameronTT/autotask-mcp/commit/280127f8f4541549b7f44fc68c0cd67807a91c5b))
+* **ci:** Replace local file dependency with git dependency for autotask-node ([828bf1a](https://github.com/KameronTT/autotask-mcp/commit/828bf1abb4872ecc40c0b64ea080c6126ecee2ed))
+* **ci:** Resolve npm ci prefer-offline/online conflict in Dockerfile ([60734c8](https://github.com/KameronTT/autotask-mcp/commit/60734c8cc935b3913c3c310a1d039efdd5d41254))
+* **ci:** use Node 22 in release job for semantic-release v25 compatibility ([f8d96eb](https://github.com/KameronTT/autotask-mcp/commit/f8d96eb929a87aeed702ac6192dcaeabb09020fe))
+* **deploy:** replace node_compat with nodejs_compat for Wrangler v4 ([e0bb78d](https://github.com/KameronTT/autotask-mcp/commit/e0bb78d414fe0ff6c2a571440c9ef63623043541)), closes [#50](https://github.com/KameronTT/autotask-mcp/issues/50)
+* **deps:** bump autotask-node to main branch with endpoint semaphore fix ([35cef9c](https://github.com/KameronTT/autotask-mcp/commit/35cef9c659f9e0b399f03ccabcd9c9ea75878228))
+* **deps:** update autotask-node to compiled semaphore fix ([f282e21](https://github.com/KameronTT/autotask-mcp/commit/f282e21385e9b2640b8de7747df6070a8aecc605))
+* **deps:** Update autotask-node to v2.0.6 ([1a2e08e](https://github.com/KameronTT/autotask-mcp/commit/1a2e08e3f9d808b0e424ea4c8bcc46a07727d784))
+* **deps:** update autotask-node with gzip compression body fix ([62a6373](https://github.com/KameronTT/autotask-mcp/commit/62a6373960b0b5d9a45719b5ba06c233697fc88c)), closes [#151](https://github.com/KameronTT/autotask-mcp/issues/151)
+* **deps:** Update package-lock.json with correct autotask-node v2.0.6 hash ([7c0ff90](https://github.com/KameronTT/autotask-mcp/commit/7c0ff90eb5623734c9f09643cccd46582d8c9568))
+* **deps:** upgrade semantic-release to ^25.0.0 for github plugin compatibility ([41e88f1](https://github.com/KameronTT/autotask-mcp/commit/41e88f1651d30287a5d2a3b9ec534c0f4b606d15))
+* disable broken gzip compression and fix create ID parsing ([d6889f3](https://github.com/KameronTT/autotask-mcp/commit/d6889f395b8b5327f976ac6cdda81ace4b6f6eed))
+* **docker:** drop arm64 platform to fix QEMU build failures ([038f21c](https://github.com/KameronTT/autotask-mcp/commit/038f21cfc547e3c915db6bb13f3324702f53b44b))
+* **docker:** Fix build and runtime failures in Dockerfile ([c6e37e2](https://github.com/KameronTT/autotask-mcp/commit/c6e37e266c1eccf531247bd6110bfc7e06f75819))
+* **docker:** pin npm to v10 to fix git dep install failure ([bab0dc8](https://github.com/KameronTT/autotask-mcp/commit/bab0dc8f009011286231935f1833694fb4ef9377))
+* **docs:** Add base path prefix to content links for GitHub Pages ([be4b661](https://github.com/KameronTT/autotask-mcp/commit/be4b66172c2f000e09a8d887b051d4bd2bb8ad05))
+* **docs:** Use npx for Claude Code instructions instead of bundle extraction ([e5c7a01](https://github.com/KameronTT/autotask-mcp/commit/e5c7a01937ba323ce2463c2ce3c9e9c6eae65bd3))
+* don't crash on missing credentials, return tool-level errors instead ([cd9294c](https://github.com/KameronTT/autotask-mcp/commit/cd9294c900350eab5f91ce6152121e5571abb88c))
+* **expenses:** correct weekEnding field name and required params for expense report creation ([226d38d](https://github.com/KameronTT/autotask-mcp/commit/226d38d3e1f52509421fba6fe3cfa31fca9c3046))
+* **gateway:** skip autotask-node connection test in stateless mode ([67643c6](https://github.com/KameronTT/autotask-mcp/commit/67643c691d233ca0c4b760f99474203e3584a6ae))
+* load .env file at startup for credential configuration ([192c52c](https://github.com/KameronTT/autotask-mcp/commit/192c52c5b324ee485c07c73367f7d80da236f73d))
+* **mapping:** coalesce concurrent cache refreshes and fix fetch-all fallback ([ea08f80](https://github.com/KameronTT/autotask-mcp/commit/ea08f80379898d10f1447a2399ab429151790756))
+* **mcpb:** Add bundle signing, size reduction, and Claude Desktop compatibility ([89a4711](https://github.com/KameronTT/autotask-mcp/commit/89a471172a7486f56aadffaa8881a7ff96c87930))
+* **mcpb:** Fix bundle runtime errors and add automated test harness ([c3beb22](https://github.com/KameronTT/autotask-mcp/commit/c3beb221bdacf949aa543d846188ab1fb85639d2))
+* **notes:** use sub-resource URL /Tickets/{id}/Notes for create_ticket_note ([#33](https://github.com/KameronTT/autotask-mcp/issues/33)) ([d9a26a0](https://github.com/KameronTT/autotask-mcp/commit/d9a26a021c34e3966b5cff6bda931f15b6372747))
+* prevent dotenv stdout pollution in MCP stdio transport ([8818749](https://github.com/KameronTT/autotask-mcp/commit/8818749b2ec6979eddca0d45f7dd13a3c7c60756))
+* prevent stdout pollution from autotask-node's dotenv.config() ([abc61fd](https://github.com/KameronTT/autotask-mcp/commit/abc61fdcd46f3891fe4501d226986163fe0dec95))
+* **projects:** build searchProjects filters from individual params ([6e30860](https://github.com/KameronTT/autotask-mcp/commit/6e30860f3fc475df7bd3a6623856bc6330d035f6)), closes [wyre-technology/msp-claude-plugins#36](https://github.com/wyre-technology/msp-claude-plugins/issues/36)
+* quote item creation 404 and quote creation 500 errors ([#30](https://github.com/KameronTT/autotask-mcp/issues/30)) ([7f8e64f](https://github.com/KameronTT/autotask-mcp/commit/7f8e64f89350dba7962a56f2fa461b7db6af26ec)), closes [wyre-technology/autotask-node#149](https://github.com/wyre-technology/autotask-node/issues/149)
+* rename duplicate step id 'version' to 'release-version' in docker job ([5e093cb](https://github.com/KameronTT/autotask-mcp/commit/5e093cb019b5fdc457b91c67efb807ce00207cd2))
+* resolve .env relative to script location as fallback ([367eb0d](https://github.com/KameronTT/autotask-mcp/commit/367eb0d9a4bbcf0ec2b73e95ab96737145f586ac))
+* resolve Docker build failure caused by prepare script running before source copy ([87b0a0c](https://github.com/KameronTT/autotask-mcp/commit/87b0a0cfde754bfe0f98980893834db6afd0eed1))
+* resolve merge conflict markers from squash merges ([6c152eb](https://github.com/KameronTT/autotask-mcp/commit/6c152ebf7cb91a4fb19869d000ec6d1b93ad6a78)), closes [#43](https://github.com/KameronTT/autotask-mcp/issues/43) [#44](https://github.com/KameronTT/autotask-mcp/issues/44) [#45](https://github.com/KameronTT/autotask-mcp/issues/45)
+* **security:** address code scanning vulnerabilities ([9fba187](https://github.com/KameronTT/autotask-mcp/commit/9fba1879186a4c4c31482776a9a26152e163d7fe))
+* **security:** update brace-expansion for CVE-2025-5889 ([#19](https://github.com/KameronTT/autotask-mcp/issues/19)) ([619d8d8](https://github.com/KameronTT/autotask-mcp/commit/619d8d88553f95263f84bdb4dc9be5ff95d3230c)), closes [#13](https://github.com/KameronTT/autotask-mcp/issues/13) [#14](https://github.com/KameronTT/autotask-mcp/issues/14)
+* **security:** update Docker base image for npm CVEs ([#16](https://github.com/KameronTT/autotask-mcp/issues/16)) ([cef86ba](https://github.com/KameronTT/autotask-mcp/commit/cef86ba8f5397f04612f54c128e373e01392b09c)), closes [#13](https://github.com/KameronTT/autotask-mcp/issues/13)
+* **security:** update lodash for CVE-2025-13465 ([#18](https://github.com/KameronTT/autotask-mcp/issues/18)) ([99e856d](https://github.com/KameronTT/autotask-mcp/commit/99e856d114fed5e4665bb69600d18977d7f67762)), closes [#13](https://github.com/KameronTT/autotask-mcp/issues/13) [#14](https://github.com/KameronTT/autotask-mcp/issues/14)
+* **security:** update MCP SDK for CVE-2026-0621, CVE-2025-66414 ([#17](https://github.com/KameronTT/autotask-mcp/issues/17)) ([33a7d81](https://github.com/KameronTT/autotask-mcp/commit/33a7d81ce1181aaad74017ab32ba8918411c3e4e)), closes [#13](https://github.com/KameronTT/autotask-mcp/issues/13) [#11](https://github.com/KameronTT/autotask-mcp/issues/11)
+* **security:** update tar for CVE-2026-23950, CVE-2026-23745 ([6890ca6](https://github.com/KameronTT/autotask-mcp/commit/6890ca60688db539020eac3c02132ebc8858463c)), closes [#12](https://github.com/KameronTT/autotask-mcp/issues/12)
+* surface Autotask API validation errors instead of generic 500 ([#32](https://github.com/KameronTT/autotask-mcp/issues/32)) ([b8e2453](https://github.com/KameronTT/autotask-mcp/commit/b8e2453fb13208dcbb022c6c028c76d009c51414))
+* sync manifest.json version from package.json at pack time ([c7a9724](https://github.com/KameronTT/autotask-mcp/commit/c7a97241777c47f28bfcaf3cb4a4f6392d68d3b3))
+* task creation endpoint, ticket notes, field info + phase tools ([9d7fa42](https://github.com/KameronTT/autotask-mcp/commit/9d7fa42a1ce5d9e08651ca5b524a86d9b29a404b)), closes [#46](https://github.com/KameronTT/autotask-mcp/issues/46) [#47](https://github.com/KameronTT/autotask-mcp/issues/47)
+* **test:** Run all MCPB tests in single server session to avoid rate limits ([7b425cf](https://github.com/KameronTT/autotask-mcp/commit/7b425cfbbba7a0ceeb0d6681dc84fb4a22ea421a))
+* **tests:** Resolve ESM compatibility and rewrite mapping tests ([a294a7c](https://github.com/KameronTT/autotask-mcp/commit/a294a7c390a5ae56b70c269f5f6aaf0c3ff224e5))
+* **tests:** update expense item test assertions to match refactored API ([9affc62](https://github.com/KameronTT/autotask-mcp/commit/9affc62d0769cb3ce7d079f1fbfae0e3c694ff2b)), closes [#27](https://github.com/KameronTT/autotask-mcp/issues/27)
+* **tests:** update expense item tests to match implemented API signatures ([7fac014](https://github.com/KameronTT/autotask-mcp/commit/7fac014eedcbc27bf9753e719b042163e770f5ff))
+* **tests:** update test expectations for implemented billing code methods ([1833d02](https://github.com/KameronTT/autotask-mcp/commit/1833d02fd217d82348167067dd43d938b40f31c3))
+* **tickets:** update autotask-node lockfile with PATCH collection endpoint fix ([4156635](https://github.com/KameronTT/autotask-mcp/commit/4156635778bbd5be427bb55c8df3472ae6a62ca5))
+* **tickets:** update autotask-node to PATCH collection endpoint fix ([0cf01d8](https://github.com/KameronTT/autotask-mcp/commit/0cf01d87b1063d6b27a98990a297de045fe17679))
+* **tickets:** use PATCH instead of PUT for updateTicket ([c0a0b7b](https://github.com/KameronTT/autotask-mcp/commit/c0a0b7bf046831982a39e699857b278474258588))
+* **time-entries:** bypass broken list() filter by calling /TimeEntries/query directly ([146e94d](https://github.com/KameronTT/autotask-mcp/commit/146e94d0b415c339d5201071e2e56ff1b6d4429c)), closes [#53](https://github.com/KameronTT/autotask-mcp/issues/53)
+* **tools:** return explicit not-found errors to prevent LLM hallucination ([#31](https://github.com/KameronTT/autotask-mcp/issues/31)) ([7f628db](https://github.com/KameronTT/autotask-mcp/commit/7f628db8991954f3fbaadeef796b7521702532cd))
+* upgrade autotask-node to v2.0.3 (removes dotenv dependency) ([1a5727b](https://github.com/KameronTT/autotask-mcp/commit/1a5727b709a84a3741adf15b51f26502d9a4c5c7))
+* upgrade autotask-node to v2.0.4 (graceful logger) ([213db40](https://github.com/KameronTT/autotask-mcp/commit/213db40377852ab3dfe6971daf57cbf9f71f5e02))
+* upgrade autotask-node to v2.0.5 (stderr-only logging) ([a01588b](https://github.com/KameronTT/autotask-mcp/commit/a01588b1144bcb2adfae44c102dd7879225000c3))
+* use autotask-node v2.1.0 parent-child URL pattern for note/time entry creates ([6397094](https://github.com/KameronTT/autotask-mcp/commit/6397094fad52f2afef72f0f92d4e523af65b1f1a))
+* use correct parent-child URL patterns for child entity creation ([#24](https://github.com/KameronTT/autotask-mcp/issues/24)) ([47f2a75](https://github.com/KameronTT/autotask-mcp/commit/47f2a75b16de3af6b0f7581079f22fde575fe9d9))
+* use stateless per-request server pattern for HTTP transport ([e8c6326](https://github.com/KameronTT/autotask-mcp/commit/e8c6326e3bc26aa6eba773b298ae4a72336b8ba5))
+
+
+### Features
+
+* add create_expense_item tool and fix expense report accessors ([0cf9f09](https://github.com/KameronTT/autotask-mcp/commit/0cf9f094e09d48fb4ed94e23242cfd354ab7f908))
+* add DigitalOcean and Cloudflare deploy infrastructure and badges ([b68bad5](https://github.com/KameronTT/autotask-mcp/commit/b68bad5b7406ea17a0de4fe16ce65d75f7cb14d0))
+* Add ESLint configuration file ([3a8ef4d](https://github.com/KameronTT/autotask-mcp/commit/3a8ef4d550f3ea8bf09640967709cf5e4823823d))
+* Add gateway mode for hosted MCP deployments ([14d5682](https://github.com/KameronTT/autotask-mcp/commit/14d568223c9269de2d5e3e2eba5056351ca3e82d))
+* add HTTP Streamable transport for remote MCP access ([2d31853](https://github.com/KameronTT/autotask-mcp/commit/2d3185348cb4387c5726892bb15d9c432279afa3)), closes [#7](https://github.com/KameronTT/autotask-mcp/issues/7)
+* add MCPB (MCP Bundle) packaging for desktop distribution ([e7601b1](https://github.com/KameronTT/autotask-mcp/commit/e7601b1d158c261a6607530f59267dff99b06ba8))
+* Add picklist discovery tools and elicitation support ([93c68f2](https://github.com/KameronTT/autotask-mcp/commit/93c68f20acf31c0a8cc661689f820bf7e3518393))
+* add Regular Time entry support with name resolution ([f1947a8](https://github.com/KameronTT/autotask-mcp/commit/f1947a85c49790f55476d6c0c2f397b53172a0f0))
+* add Service Call support (11 new tools) ([11b682e](https://github.com/KameronTT/autotask-mcp/commit/11b682e678c42c89c3ef963b1ca826ff653ea6b6)), closes [#38](https://github.com/KameronTT/autotask-mcp/issues/38)
+* add Service Calls CRUD support ([#38](https://github.com/KameronTT/autotask-mcp/issues/38)) ([163d5eb](https://github.com/KameronTT/autotask-mcp/commit/163d5eb36c6936b416d1d0fb127641975a2c4c9e))
+* add TicketCharges CRUD support ([b61aaf0](https://github.com/KameronTT/autotask-mcp/commit/b61aaf0b0e113121b73a851b17970164ada9edf4))
+* add TicketCharges CRUD support ([#36](https://github.com/KameronTT/autotask-mcp/issues/36)) ([de2d684](https://github.com/KameronTT/autotask-mcp/commit/de2d684223047d6d87f4682ca2459ed8e02f06fa))
+* **attachments:** add autotask_create_ticket_attachment tool ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#62](https://github.com/KameronTT/autotask-mcp/issues/62)) ([8ff325e](https://github.com/KameronTT/autotask-mcp/commit/8ff325e1f11d24097aab0f1a5c7a5968bc4d409d))
+* **billing:** Add BillingItems and BillingItemApprovalLevels support ([4c88034](https://github.com/KameronTT/autotask-mcp/commit/4c880348d7a930b5277a810b89a3c54cddedb509)), closes [#21](https://github.com/KameronTT/autotask-mcp/issues/21)
+* **billing:** add invoice details tool and billing item filters ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#61](https://github.com/KameronTT/autotask-mcp/issues/61)) ([cc9354f](https://github.com/KameronTT/autotask-mcp/commit/cc9354f9703e23c9dde3eaed3dee0e9f065e3a88))
+* bump autotask-node to v2.2.0 with Regular Time entry support ([00f1f1e](https://github.com/KameronTT/autotask-mcp/commit/00f1f1e3078736f56cba1f4943ffec802a18197d))
+* **checklist:** add ticket checklist items CRUD tools ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#59](https://github.com/KameronTT/autotask-mcp/issues/59)) ([78e0f78](https://github.com/KameronTT/autotask-mcp/commit/78e0f7805e36ce9c69e0ecd3b6c7326e95d51615)), closes [#33](https://github.com/KameronTT/autotask-mcp/issues/33) [#32](https://github.com/KameronTT/autotask-mcp/issues/32)
+* **config:** auto-detect Autotask API zone from username ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#60](https://github.com/KameronTT/autotask-mcp/issues/60)) ([01a3bae](https://github.com/KameronTT/autotask-mcp/commit/01a3bae888c6cb3cb45d91afb50e83b2f0eed6c1))
+* Initialize Taskmaster and fix build setup ([5e22e0c](https://github.com/KameronTT/autotask-mcp/commit/5e22e0cf9d51043f7d348bdba5eb66886843a8cf))
+* **projects:** add autotask_update_project tool ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#57](https://github.com/KameronTT/autotask-mcp/issues/57)) ([1efeead](https://github.com/KameronTT/autotask-mcp/commit/1efeead572b60b1513bd7c773ca684eb774e36c0))
+* Quote Builder - create quotes with line items from cost sheets ([#29](https://github.com/KameronTT/autotask-mcp/issues/29)) ([5da3a98](https://github.com/KameronTT/autotask-mcp/commit/5da3a98895446b051923afa3aa568f51bc423f23))
+* **search:** Add compact response format, smart defaults, and pagination ([00aa4b9](https://github.com/KameronTT/autotask-mcp/commit/00aa4b91e7329e833c60545d9d5e081f5a8f374c))
+* **site-config:** add company site configuration read and update tools ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#63](https://github.com/KameronTT/autotask-mcp/issues/63)) ([bb26f1a](https://github.com/KameronTT/autotask-mcp/commit/bb26f1a796496b9ec13cc50168cd731f486a4dba)), closes [#5](https://github.com/KameronTT/autotask-mcp/issues/5)
+* Switch Docker publishing to GitHub Container Registry ([97fa1ac](https://github.com/KameronTT/autotask-mcp/commit/97fa1aca3226782b7110984a712fa01ee50e7915))
+* **tickets:** expand create/update_ticket field coverage ([#55](https://github.com/KameronTT/autotask-mcp/issues/55)) ([#58](https://github.com/KameronTT/autotask-mcp/issues/58)) ([16614ff](https://github.com/KameronTT/autotask-mcp/commit/16614ff2209e5b82d57fbc83bbfbef0cc8e24080))
+* **time-entries:** add approvalStatus filter for un-posted entries ([d27f0ab](https://github.com/KameronTT/autotask-mcp/commit/d27f0ab1fe8ba169069e3fb7de7010ead4b26636)), closes [#21](https://github.com/KameronTT/autotask-mcp/issues/21)
+* **tools:** add autotask_update_ticket tool ([b73c3f9](https://github.com/KameronTT/autotask-mcp/commit/b73c3f9faee84083510bcc7e07130c0577520a34)), closes [#28](https://github.com/KameronTT/autotask-mcp/issues/28)
+* **tools:** wire autotask_update_ticket handler ([13fe142](https://github.com/KameronTT/autotask-mcp/commit/13fe142082f04f95c2fefc6f48d51f485dab12b4))
+
+
+### Reverts
+
+* remove arm64 platform and QEMU, keep linux/amd64 only ([d2f4d6a](https://github.com/KameronTT/autotask-mcp/commit/d2f4d6a19eb729e74dd48cf6cb38c477b3f00afe))
+
+
+### BREAKING CHANGES
+
+* All 35 MCP tools now use 'autotask_' prefix to prevent
+naming collisions when multiple MCP servers are connected.
+
+- search_companies → autotask_search_companies
+- create_ticket → autotask_create_ticket
+- test_connection → autotask_test_connection
+- (all other tools follow same pattern)
+
+Migration: Update all tool calls to use new namespaced names.
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+
 # [2.18.0](https://github.com/wyre-technology/autotask-mcp/compare/v2.17.2...v2.18.0) (2026-04-08)
 
 
